@@ -11,7 +11,7 @@ const getApiData = async () => {
       weight_min: parseInt(dog.weight.imperial.split("-")[0]),
       weight_max: parseInt(dog.weight.imperial.split("-")[1]),
       height: dog.height.metric,
-      life_span: dog.life_span,
+      lifeTime: dog.life_span,
       image: dog.image.url,
     };
   });
@@ -20,7 +20,7 @@ const getApiData = async () => {
 
 const getDBData = async () => {
   try {
-    const DBData = await Dog.findAll({
+    let DBData = await Dog.findAll({
       include: {
         model: Temper,
         atributes: ["name"],
@@ -30,19 +30,19 @@ const getDBData = async () => {
       },
     });
 
-    let result = await DBData.map((data) => {
+    DBData = await DBData.map((data) => {
       return {
         id: data.id,
         name: data.name,
         weight_min: data.weight_min,
         weight_max: data.weight_max,
-        life_span: data.life_span,
-        height_min: data.height_min,
-        height_max: data.height_max,
+        lifeTime: data.lifeTime,
+        height: `${data.height_min} - ${data.height_max}`,
         image: data.image,
+        // temperament: data.temperament.map((e) => {return e.name;}).join(","),
       };
     });
-    return result;
+    return DBData;
   } catch (error) {
     console.log(error);
     return error;

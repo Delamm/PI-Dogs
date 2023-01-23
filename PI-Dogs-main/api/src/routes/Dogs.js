@@ -51,8 +51,8 @@ router.post("/", async (req, res) => {
     height_max,
     weight_min,
     weight_max,
-    life_span,
-    temper,
+    lifeTime,
+    temperament,
   } = req.body;
 
   const dogCreate = await Dog.findOne({
@@ -62,20 +62,20 @@ router.post("/", async (req, res) => {
   if (dogCreate) {
     return res.status(403).send("The dog already exist");
   } else {
-    let DogCreated = await Dog.create({
+    let dogCreated = await Dog.create({
       name,
       height_min,
       height_max,
       weight_min,
       weight_max,
-      life_span,
+      lifeTime,
     });
 
     let temp = await Temper.findAll({
-      where: { name: temper },
+      where: { name: temperament },
     });
 
-    DogCreated.addTemper(temp);
+    dogCreated.addTemper(temp);
     return res.status(200).send("The dog was successfully created");
   }
 });
