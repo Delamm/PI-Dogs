@@ -44,6 +44,11 @@ module.exports = (sequelize) => {
         defaultValue:
           "https://img.freepik.com/vector-premium/cachorro-enfermo-termometro-sentado-perro-triste-personaje-dibujos-animados-alta-temperatura-fiebre-sintoma-influenza-mascota-resfriado_71593-657.jpg?w=2000",
       },
+      createdInDb: {
+        type: DataTypes.BOOLEAN,
+        allowNull: false,
+        defaultValue: true,
+      },
     },
     { timestamps: false }
   );

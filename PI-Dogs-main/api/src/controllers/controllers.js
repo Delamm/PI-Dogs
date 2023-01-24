@@ -37,6 +37,7 @@ const getDBData = async () => {
         weight_min: data.weight_min,
         weight_max: data.weight_max,
         lifeTime: data.lifeTime,
+        createdInDb: data.createdInDb,
         height: `${data.height_min} - ${data.height_max}`,
         image: data.image,
         // temperament: data.temperament.map((e) => {return e.name;}).join(","),

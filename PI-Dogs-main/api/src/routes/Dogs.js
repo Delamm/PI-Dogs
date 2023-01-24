@@ -52,6 +52,7 @@ router.post("/", async (req, res) => {
     weight_min,
     weight_max,
     lifeTime,
+    createdInDb,
     temperament,
   } = req.body;
 
@@ -69,6 +70,7 @@ router.post("/", async (req, res) => {
       weight_min,
       weight_max,
       lifeTime,
+      createdInDb,
     });
 
     let temp = await Temper.findAll({
