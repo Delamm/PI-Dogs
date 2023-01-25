@@ -4,13 +4,11 @@ export const GET_ALL_TEMPERS = "GET_ALL_TEMPERS";
 export const GET_DOG_NAME = "GET_DOG_NAME";
 export const GET_DOG_DETAIL = "GET_DOG_DETAIL";
 export const FILTER_BY_NAME = "FILTER_BY_NAME";
-export const FILTER_BY_HEIGHT = "FILTER_BY_HEIGHT";
 export const FILTER_BY_WEIGHT = "FILTER_BY_WEIGHT";
 export const FILTER_BY_TEMPERS = "FILTER_BY_TEMPERS";
 export const FILTER_CREATED_DOG = "FILTER_CREATED_DOG";
 export const POST_DOG = "POST_DOG";
 export const CLEAR_DETAIL = "CLEAR_DETAIL";
-export const DELETE_DOG = "DELETE_DOG";
 
 // ACTIONS CREATORS
 
@@ -62,13 +60,6 @@ export function postDog(dog) {
     console.log(error);
     alert("Dog could not be created");
   }
-}
-
-export function filterHeight(payload) {
-  return {
-    type: FILTER_BY_HEIGHT,
-    payload,
-  };
 }
 
 export function filterWeight(payload) {
