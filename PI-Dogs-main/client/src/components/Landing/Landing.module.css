@@ -1,0 +1,60 @@
+.background {
+  background-image: linear-gradient(rgba(5, 7, 12, 0.45), rgba(5, 7, 12, 0.45)),
+    url("./Images/landing.png");
+  background-size: cover;
+  opacity: 1px;
+  display: flex;
+  justify-content: center;
+  background-repeat: no-repeat;
+  align-items: center;
+  height: 100vh;
+}
+
+.divs {
+  justify-items: center;
+  align-items: center;
+  justify-content: center;
+  display: inline-block;
+}
+
+h1 {
+  display: inline;
+  align-items: center;
+  font-weight: 900;
+  font-family: arial;
+  font-size: 4rem;
+  color: #f3eae8;
+  text-shadow: 7px 1px 7px #2e2c33;
+}
+
+h3 {
+  display: ruby-text;
+  font-family: arial;
+  font-size: 18px;
+  color: #e5e3ed;
+  font-weight: 700;
+}
+
+.button {
+  box-shadow: 0px 0px 13px 0px #1564ad;
+  background-color: #79bbff;
+  border-radius: 15px;
+  border: 1px solid #337bc4;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: Arial;
+  font-size: 15px;
+  padding: 12px 31px;
+  text-decoration: none;
+  text-shadow: 0px 0px 0px #528ecc;
+}
+
+.button:hover {
+  background-color: #378de5;
+}
+
+.button:active {
+  position: relative;
+  top: 1px;
+}
