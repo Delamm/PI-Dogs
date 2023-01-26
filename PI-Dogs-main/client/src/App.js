@@ -1,6 +1,6 @@
 import "./App.css";
 import { Route, Switch, BrowserRouter } from "react-router-dom";
-import Landing from "./components/Landing/Landing";
+import Landing from "./components/Landing/Landing.jsx";
 import Home from "./components/Home/Home";
 import Detail from "./components/Detail/Detail";
 import PostDog from "./components/PostDog/PostDog";

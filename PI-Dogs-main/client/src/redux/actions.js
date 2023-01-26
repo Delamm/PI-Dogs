@@ -50,16 +50,11 @@ export function getDogId(id) {
   };
 }
 
-export function postDog(dog) {
-  try {
-    return async function () {
-      const post = await axios.post("/dogs", data);
-      return post;
-    };
-  } catch (error) {
-    console.log(error);
-    alert("Dog could not be created");
-  }
+export function postDog(data) {
+  return async function () {
+    const post = await axios.post("/dogs", data);
+    return post;
+  };
 }
 
 export function filterWeight(payload) {

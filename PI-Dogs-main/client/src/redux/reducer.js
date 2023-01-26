@@ -10,7 +10,7 @@ import {
   FILTER_CREATED_DOG,
   CLEAR_DETAIL,
   POST_DOG,
-} from "./actions";
+} from "./actions.js";
 // estado inicial
 let initialState = {
   dogs: [],
@@ -20,7 +20,7 @@ let initialState = {
 };
 //export un reducer que tenga logica para las actions
 
-export default function reducer(state = initialState, { type, payload }) {
+function rootReducer(state = initialState, { type, payload }) {
   switch (type) {
     case GET_ALL_DOGS:
       return {
@@ -50,12 +50,12 @@ export default function reducer(state = initialState, { type, payload }) {
     case FILTER_BY_NAME:
       const filter =
         payload === "A-Z"
-          ? [...state.dogs].sort((a, b) => {
+          ? state.dogs.sort((a, b) => {
               if (a.name.toLowerCase() > b.name.toLowerCase()) return 1;
               if (a.name.toLowerCase() < b.name.toLowerCase()) return -1;
               return 0;
             })
-          : [...state.dogs].sort((a, b) => {
+          : state.dogs.sort((a, b) => {
               if (a.name.toLowerCase() > b.name.toLowerCase()) return -1;
               if (a.name.toLowerCase() < b.name.toLowerCase()) return 1;
               return 0;
@@ -67,7 +67,7 @@ export default function reducer(state = initialState, { type, payload }) {
       };
 
     case FILTER_BY_TEMPERS:
-      const filterTemper = [...state.allDogs];
+      const filterTemper = state.allDogs;
       const dogsTemper =
         payload === "All"
           ? filterTemper
@@ -81,7 +81,7 @@ export default function reducer(state = initialState, { type, payload }) {
       };
 
     case FILTER_BY_WEIGHT:
-      const dogPeso = [...state.allDogs].filter((e) => e.weight_min);
+      const dogPeso = state.allDogs.filter((e) => e.weight_min);
       const filterPeso =
         payload === "min_weight"
           ? dogPeso.sort((a, b) => {
@@ -99,11 +99,11 @@ export default function reducer(state = initialState, { type, payload }) {
       };
 
     case FILTER_CREATED_DOG:
-      const allData = [...state.allDogs];
+      const allData = state.allDogs;
       const filterDb =
         payload === "created"
           ? allData.filter((e) => e.createdInDb)
-          : allData.filter((e = !e.createdInDb));
+          : allData.filter((e) => !e.createdInDb);
       return {
         ...state,
         dogs: payload === "all" ? state.allDogs : filterDb,
@@ -121,6 +121,8 @@ export default function reducer(state = initialState, { type, payload }) {
       };
 
     default:
-      return { ...state };
+      return state;
   }
 }
+
+export default rootReducer;

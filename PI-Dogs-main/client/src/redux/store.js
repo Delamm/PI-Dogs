@@ -1,14 +1,11 @@
-// herramientas para crear una store con thunk
-//createStore
-//applyMiddleware
-//thunk
-//reducer
-//compose || ?
 import { createStore, applyMiddleware } from "redux";
+import { composeWithDevTools } from "redux-devtools-extension";
 import thunk from "redux-thunk";
-import reducer from "./reducer";
-import { composeWhitDevTools } from "redux-devtools-extension";
+import rootReducer from "./reducer";
 
-const store = createStore(reducer, composeWhitDevTools(applyMiddleware(thunk)));
+const store = createStore(
+  rootReducer,
+  composeWithDevTools(applyMiddleware(thunk))
+);
 
 export default store;
