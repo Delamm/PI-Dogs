@@ -106,7 +106,7 @@ export default function PostDog() {
   };
 
   useEffect(() => {
-    dispatch(getTemperaments());
+    dispatch(getTempers());
   }, [dispatch]);
 
   const handleSelect = (e) => {

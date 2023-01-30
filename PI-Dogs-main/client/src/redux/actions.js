@@ -78,6 +78,13 @@ export function filterDBDog(payload) {
   };
 }
 
+export function filterByName(payload) {
+  return {
+    type: FILTER_BY_NAME,
+    payload,
+  };
+}
+
 export function clearDetail() {
   return {
     type: CLEAR_DETAIL,
