@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useHistory } from "react-router-dom";
 import { postDog, getTempers } from "../../redux/actions";
+import style from "./PostDog.module.css";
 
 const validate = (input) => {
   let errors = {};
@@ -143,18 +144,19 @@ export default function PostDog() {
   };
 
   return (
-    <div>
+    <div className={style.background}>
       <div>
         <Link to="/home">
-          <button>HOME</button>
+          <button className={style.btn}>HOME</button>
         </Link>
-        <h2>CREATE DOG</h2>
+        <h2 className={style.titulo}>CREATE DOG</h2>
       </div>
       <div>
-        <form onSubmit={(e) => handleSubmit(e)}>
-          <div>
+        <form className={style.formStyle} onSubmit={(e) => handleSubmit(e)}>
+          <div className={style.items}>
             <h3>NAME:</h3>
             <input
+              className={style.input}
               required
               type="text"
               value={input.name}
@@ -165,6 +167,7 @@ export default function PostDog() {
           <div>
             <h3>MIN HEIGHT:</h3>
             <input
+              className={style.input}
               min="0"
               type="number"
               value={input.height_min}
@@ -175,6 +178,7 @@ export default function PostDog() {
           <div>
             <h3>MAX HEIGHT:</h3>
             <input
+              className={style.input}
               min="0"
               type="number"
               value={input.height_max}
@@ -185,6 +189,7 @@ export default function PostDog() {
           <div>
             <h3>MIN WEIGHT:</h3>
             <input
+              className={style.input}
               min="0"
               type="number"
               value={input.weight_min}
@@ -195,6 +200,7 @@ export default function PostDog() {
           <div>
             <h3>MAX WEIGHT:</h3>
             <input
+              className={style.input}
               min="0"
               type="number"
               value={input.weight_max}
@@ -205,6 +211,7 @@ export default function PostDog() {
           <div>
             <h3>LIFE SPAN:</h3>
             <input
+              className={style.input}
               min="0"
               type="number"
               value={input.lifeTime}
@@ -214,9 +221,9 @@ export default function PostDog() {
           </div>
           <div>
             <h3>TEMPERAMENTS</h3>
-            <select onChange={handleSelect}>
+            <select className={style.input} onChange={handleSelect}>
               <option value="all" disabled selected defaultValue>
-                prototemperament
+                {/* prototemperament */}
               </option>
               {allTemperaments.map((e) => {
                 return (
@@ -245,24 +252,28 @@ export default function PostDog() {
             input.height_min >= input.height_max ||
             input.weight_min >= input.weight_max ||
             !input.temperament.length) ? (
-            <div>The dog could not be created</div>
+            <div className={style.errores}>The dog could not be created</div>
           ) : (
-            <button type="submit">CREATE</button>
+            <button className={style.btn} type="submit">
+              CREATE
+            </button>
           )}
         </form>
-        <div>
+        <div className={style.moodDiv}>
           {input.temperament.map((d, i) => {
             return (
               <div key={i++}>
-                <div>{d}</div>
-                <button onClick={() => handleErase(d)}>X</button>
+                <div className={style.tempers}>{d}</div>
+                <button className={style.borrar} onClick={() => handleErase(d)}>
+                  X
+                </button>
               </div>
             );
           })}
         </div>
-        <div>
+        <div className={style.error}>
           <h2>ERRORS :</h2>
-          <div>
+          <div className={style.error}>
             <h2>{errors.name && <p>{errors.name}</p>}</h2>
             <h2>{errors.height_min && <p>{errors.height_min}</p>}</h2>
             <h2>{errors.height_max && <p>{errors.height_max}</p>}</h2>
