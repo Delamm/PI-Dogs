@@ -42,7 +42,7 @@ module.exports = (sequelize) => {
       image: {
         type: DataTypes.STRING,
         defaultValue:
-          "https://img.freepik.com/vector-premium/cachorro-enfermo-termometro-sentado-perro-triste-personaje-dibujos-animados-alta-temperatura-fiebre-sintoma-influenza-mascota-resfriado_71593-657.jpg?w=2000",
+          "https://cloudfront-us-east-1.images.arcpublishing.com/infobae/WBV5RZ46QRDGJMFDOUSL2WBLMI.jpg",
       },
       createdInDb: {
         type: DataTypes.BOOLEAN,

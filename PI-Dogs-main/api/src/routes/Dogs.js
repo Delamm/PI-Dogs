@@ -63,7 +63,7 @@ router.post("/", async (req, res) => {
   if (dogCreate) {
     return res.status(403).send("The dog already exist");
   } else {
-    let dogCreated = await Dog.create({
+    let DogCreated = await Dog.create({
       name,
       height_min,
       height_max,
@@ -77,7 +77,7 @@ router.post("/", async (req, res) => {
       where: { name: temperament },
     });
 
-    dogCreated.addTemper(temp);
+    DogCreated.addTemper(temp);
     return res.status(200).send("The dog was successfully created");
   }
 });

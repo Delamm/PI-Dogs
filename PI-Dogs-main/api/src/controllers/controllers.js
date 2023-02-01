@@ -29,7 +29,7 @@ const getDBData = async () => {
         },
       },
     });
-
+    
     DBData = await DBData.map((data) => {
       return {
         id: data.id,
@@ -40,9 +40,10 @@ const getDBData = async () => {
         createdInDb: data.createdInDb,
         height: `${data.height_min} - ${data.height_max}`,
         image: data.image,
-        // temperament: data.temperament.map((e) => {return e.name;}).join(","),
+        temperament: data.tempers?.map((e) => {return e.name;}).join(","),
       };
     });
+    
     return DBData;
   } catch (error) {
     console.log(error);
