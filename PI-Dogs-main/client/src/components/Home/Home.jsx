@@ -13,6 +13,7 @@ import {
 import Card from "../Card/Card";
 import NavBar from "../NavBar/NavBar";
 import Paginated from "../Paginated/Paginated";
+import style from "./Home.module.css";
 
 export default function Home() {
   const dispatch = useDispatch();
@@ -62,16 +63,17 @@ export default function Home() {
   }
 
   return (
-    <div>
-      <header>
+    <div className={style.background}>
+      <header className={style.fix}>
         <div>
           <Link to="/">
-            <button>Dogpedia</button>
+            <button className={style.logo}></button>
           </Link>
         </div>
-        <div>
-          <div>
+        <div className={style.headerContainerLeft}>
+          <div className={style.retoque}>
             <button
+              className={style.btn}
               onClick={(e) => {
                 handleClick(e);
               }}
@@ -79,12 +81,12 @@ export default function Home() {
               Get dogs again
             </button>
             <Link to="/create">
-              <button>Create Dog</button>
+              <button className={style.btn}>Create Dog</button>
             </Link>
           </div>
           <div>
             <NavBar paginado={paginado} />
-            <div>
+            <div className={style.containerFilters}>
               <select defaultValue onChange={(e) => handlerFilterName(e)}>
                 <option disabled>Order by name</option>
                 <option key={1} value="A-Z">
@@ -141,7 +143,7 @@ export default function Home() {
       />
       <div>
         {Object.keys(allDogs).length ? (
-          <div>
+          <div className={style.containerCards}>
             {currentDogs?.map((el) => {
               return (
                 <div key={el.id}>

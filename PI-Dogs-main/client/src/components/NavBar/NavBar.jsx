@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { getDogName } from "../../redux/actions";
 import { useHistory } from "react-router-dom";
+import style from "./NavBar.module.css";
 
-export default function NavBar({ pag }) {
+export default function NavBar({ paginado }) {
   const dispatch = useDispatch();
   const [dog, setDog] = useState("");
   const history = useHistory();
@@ -18,19 +19,24 @@ export default function NavBar({ pag }) {
     if (dog) dispatch(getDogName(dog));
     setDog("");
     history.push("/home");
-    pag(1);
+    paginado(1);
   };
 
   return (
-    <div>
-      <form>
+    <div className={style.container}>
+      <form className={style.form}>
         <input
+          className={style.searchbar}
           type="text"
           onChange={(e) => handleInput(e)}
           value={dog}
           placeholder="Buscar..."
         />
-        <button type="submit" onClick={(e) => handleSubmit(e)}>
+        <button
+          className={style.btn}
+          type="submit"
+          onClick={(e) => handleSubmit(e)}
+        >
           WOAF!!
         </button>
       </form>

@@ -49,13 +49,19 @@ h3 {
   padding: 12px 31px;
   text-decoration: none;
   text-shadow: 0px 0px 0px #528ecc;
+  transform: translate3d(0, 0, 0);
+  transition: all 0.3s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: top;
 }
 
 .button:hover {
   background-color: #378de5;
+  font-size: 18px;
 }
 
 .button:active {
-  position: relative;
   top: 1px;
 }

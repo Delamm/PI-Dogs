@@ -1,0 +1,158 @@
+.background {
+  background-image: linear-gradient(rgba(5, 7, 12, 0.2), rgba(5, 7, 12, 0.2)),
+    url("./Images/detail2.jpg");
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 100vh;
+  background-attachment: fixed;
+}
+
+.headerContainerLeft {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-bottom: 0.5rem;
+}
+
+.fix {
+  display: flex;
+  justify-content: center;
+}
+
+.logo {
+  background-image: url("./Images/perro_logo.png");
+  background-size: cover;
+  margin-top: 0.5em;
+  appearance: none;
+  backface-visibility: hidden;
+  background-color: #1d97c7;
+  border-radius: 8px;
+  border-style: none;
+  box-shadow: rgba(34, 91, 175, 0.3) 0 4px 9px;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  line-height: 1.5;
+  outline: none;
+  overflow: hidden;
+  padding: 16px 30px;
+  position: relative;
+  transform: translate3d(0, 0, 0);
+  transition: all 0.3s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: top;
+  white-space: nowrap;
+}
+.logo:hover {
+  background-color: #1d97c7;
+  opacity: 1;
+  transform: translateY(0);
+  transition-duration: 0.35s;
+  padding: 17px 31px;
+}
+
+.logo:active {
+  transform: translateY(2px);
+  transition-duration: 0.35s;
+}
+
+.logo:hover {
+  box-shadow: #0850a8 0 6px 12px;
+}
+
+.btn {
+  box-shadow: 0px 0px 7px 0px #1564ad;
+  margin: 9px;
+  margin-bottom: 0.5rem;
+  margin-top: 0.5em;
+  background-color: #79bbff;
+  border-radius: 10px;
+  border: 0px solid #337bc4;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: Arial;
+  font-size: 15px;
+  font-weight: 700;
+  padding: 7px 12px;
+  text-decoration: none;
+  text-shadow: 0px 0px 0px #528ecc;
+  outline: none;
+  overflow: hidden;
+  transform: translate3d(0, 0, 0);
+  transition: all 0.3s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: top;
+}
+
+.btn:hover {
+  background-color: #378de5;
+}
+
+.btn:active {
+  position: relative;
+  top: 1px;
+}
+
+.retoque {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 1rem;
+}
+
+.containerFilters {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  margin-top: 1.3rem;
+}
+
+.containerFilters select {
+  padding: 0.5rem 0.9rem;
+  border: none;
+  box-shadow: 5px 5px 5px 0.5px rgba(0, 0, 0, 0.4);
+  background-color: #378de5;
+  color: white;
+  cursor: pointer;
+  outline: none;
+  transform: translate3d(0, 0, 0);
+  transition: all 0.3s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: top;
+}
+
+.containerFilters select:hover {
+  background-color: #0850a8;
+}
+
+.containerFilters select:first-child {
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+}
+
+.containerFilters select:last-child {
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+
+.containerCards {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: space-around;
+  margin-bottom: 5%;
+}

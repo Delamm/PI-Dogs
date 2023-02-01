@@ -1,38 +1,35 @@
 .card {
   background-color: #2681b9;
-  width: 300px;
+  width: 800px;
   height: 300px;
-  align-items: space-between;
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   border: 1px solid #185078;
   border-radius: 15px;
-  margin: 2rem;
-  box-shadow: 13px 13px 22px 1px rgba(0, 0, 0, 0.78);
 }
 
 .cardImg {
-  margin-top: 1px;
+  margin-left: 2%;
   align-self: center;
-  border-radius: 15px;
-  box-shadow: 5px 12px 22px 1px #102b47;
+  width: 220px;
 }
 
 .cardInfo {
-  border-radius: 15px;
-  box-shadow: 13px 13px 27px 1px rgba(0, 0, 0, 0.78);
+  box-shadow: 19px 11px 26px 10px rgba(0, 0, 0, 0.78);
+  display: flex;
   font-family: Arial;
-  letter-spacing: 1px;
-  word-spacing: 1px;
+  letter-spacing: 1.8px;
+  word-spacing: 1.6px;
   color: #4a3401;
   font-weight: normal;
   font-style: normal;
   font-variant: normal;
   text-transform: none;
   background-color: #79bbff;
+  border-radius: 15px;
+  flex-direction: column;
   justify-content: space-around;
-  width: 300.5px;
-  height: 150px;
+  width: 520px;
 }
 
 .titleStyle {
@@ -40,34 +37,18 @@
   text-decoration: none;
   justify-content: space-around;
   color: #252323;
-  font-size: 7px;
+  font-size: 15px;
   text-transform: uppercase;
   font-weight: 500;
 }
 
-.h3effect {
+h3 {
   display: ruby-text;
   font-family: arial;
-  font-size: 17px;
+  font-size: 25px;
   color: #e5e3ed;
   font-weight: 800;
   text-shadow: 3px 3px 5px #2e2c33;
-  transform: translate3d(0, 0, 0);
-  transition: all 0.3s;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  vertical-align: top;
-}
-
-.h3effect:hover {
-  color: #bbbbce;
-  font-size: 19px;
-}
-
-.h3effect:active {
-  position: relative;
-  top: 1px;
 }
 
 .titleStyle > a {
