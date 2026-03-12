@@ -4,14 +4,6 @@
 
 <img height="200" src="./dog.png" />
 
-## Objetivos del Proyecto
-
-- Construir una App utlizando React, Redux, Node y Sequelize.
-- Afirmar y conectar los conceptos aprendidos en la carrera.
-- Aprender mejores prácticas.
-- Aprender y practicar el workflow de GIT.
-- Usar y practicar testing.
-
 ## Horarios y Fechas
 
 El proyecto tendrá una duración máxima de tres semanas. En el caso de que completan todas las tareas antes de dicho lapso podrán avisar a su Instructor para coordinar una fecha de presentación del trabajo (DEMO).
@@ -68,14 +60,6 @@ Reemplazar `usuariodepostgres` y `passwordDePostgres` con tus propias credencial
 Adicionalmente será necesario que creen desde psql una base de datos llamada `dogs`
 
 El contenido de `client` fue creado usando: Create React App.
-
-## Enunciado
-
-a idea general es crear una aplicación en la cual se puedan ver distintas razas de perro junto con información relevante de las mismas utilizando la api externa [the dog api](https://thedogapi.com/) y a partir de ella poder, entre otras cosas:
-
-- Buscar perros
-- Filtrarlos / Ordenarlos
-- Agregar nuevos perros
 
 __IMPORTANTE__: Para poder utilizar esta API externa es necesario crearse una cuenta para obtener una API Key que luego debera ser incluida en todos los request que hagamos a rawg simplemente agregando `?api_key={YOUR_API_KEY}` al final de cada endpoint. Agregar la clave en el archivo `.env` para que la misma no se suba al repositorio por cuestiones de seguridad y utilizarla desde allí.
 
